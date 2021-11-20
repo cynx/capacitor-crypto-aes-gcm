@@ -6,20 +6,46 @@
     "tags": [],
     "methods": [
       {
-        "name": "echo",
-        "signature": "(options: { value: string; }) => any",
+        "name": "encrypt",
+        "signature": "(options: { text: string; base64Encoded: string; }) => any",
         "parameters": [
           {
             "name": "options",
             "docs": "",
-            "type": "{ value: string; }"
+            "type": "{ text: string; base64Encoded: string; }"
           }
         ],
         "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
-        "slug": "echo"
+        "slug": "encrypt"
+      },
+      {
+        "name": "decrypt",
+        "signature": "(options: { text: string; base64Encoded: string; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ text: string; base64Encoded: string; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "decrypt"
+      },
+      {
+        "name": "generateSymmetricKey",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "generatesymmetrickey"
       }
     ],
     "properties": []

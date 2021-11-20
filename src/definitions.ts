@@ -1,3 +1,5 @@
 export interface CryptoPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  encrypt(options: { text: string, base64Encoded: string }): Promise<{ encrypted: string }>;
+  decrypt(options: { text: string, base64Encoded: string }): Promise<{ decrypted: string }>;
+  generateSymmetricKey (): Promise<string>;
 }

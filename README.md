@@ -13,22 +13,50 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`encrypt(...)`](#encrypt)
+* [`decrypt(...)`](#decrypt)
+* [`generateSymmetricKey()`](#generatesymmetrickey)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### encrypt(...)
 
 ```typescript
-echo(options: { value: string; }) => any
+encrypt(options: { text: string; base64Encoded: string; }) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code>{ text: string; base64Encoded: string; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### decrypt(...)
+
+```typescript
+decrypt(options: { text: string; base64Encoded: string; }) => any
+```
+
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code>{ text: string; base64Encoded: string; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### generateSymmetricKey()
+
+```typescript
+generateSymmetricKey() => any
+```
 
 **Returns:** <code>any</code>
 

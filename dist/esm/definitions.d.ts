@@ -1,7 +1,15 @@
 export interface CryptoPlugin {
-    echo(options: {
-        value: string;
+    encrypt(options: {
+        text: string;
+        base64Encoded: string;
     }): Promise<{
-        value: string;
+        encrypted: string;
     }>;
+    decrypt(options: {
+        text: string;
+        base64Encoded: string;
+    }): Promise<{
+        decrypted: string;
+    }>;
+    generateSymmetricKey(): Promise<string>;
 }
