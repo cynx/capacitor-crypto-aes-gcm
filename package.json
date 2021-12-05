@@ -1,6 +1,6 @@
 {
   "name": "capacitor-crypto-aes-gcm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Encrypt & Decrypt using AES-GCM 256 on iOS using CryptoKit",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
