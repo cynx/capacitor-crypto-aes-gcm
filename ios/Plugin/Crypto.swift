@@ -36,7 +36,6 @@ extension SymmetricKey {
             guard let deserialisedSymmetricKey = SymmetricKey(base64EncodedString: base64Encoded) else { 
                 return "Could not decode key: \(base64Encoded)" 
             }
-            print("deserialsed key \(deserialisedSymmetricKey)")
             let textData = text.data(using: .utf8)!
             let encrypted = try AES.GCM.seal(textData, using: deserialisedSymmetricKey)
             return encrypted.combined!.base64EncodedString()}
@@ -67,7 +66,6 @@ extension SymmetricKey {
 
     @objc public func generateSymmetricKey() -> String {
         let key256:String = SymmetricKey(size: .bits256).serialize()
-        print(key256)
         return key256
     }
 }
