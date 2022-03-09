@@ -11,19 +11,48 @@ public class CryptoPlugin: CAPPlugin {
     private let implementation = Crypto()
 
     @objc func encrypt(_ call: CAPPluginCall) {
-        let base64Encoded = call.getString("base64Encoded") ?? ""
-        let text = call.getString("text") ?? ""
-        call.resolve([
-            "encrypted": implementation.encrypt(text: text, base64Encoded: base64Encoded)
-        ])
+        guard let base64Encoded = call.getString("base64Encoded") else {
+            call.reject("'base64Encoded' value must be provided")
+            return
+        }
+        
+        guard let text = call.getString("text") else {
+            call.reject("'text' value must be provided")
+            return
+        }
+        
+        implementation.encrypt(text: text, base64Encoded: base64Encoded) { (result, success) in
+            
+            if success {
+                call.resolve([
+                    "encrypted": result
+                ])
+            } else {
+                call.reject(result)
+            }
+        }
     }
 
     @objc func decrypt(_ call: CAPPluginCall) {
-        let base64Encoded = call.getString("base64Encoded") ?? ""
-        let text = call.getString("text") ?? ""
-        call.resolve([
-            "decrypted": implementation.decrypt(text: text, base64Encoded: base64Encoded)
-        ])
+        guard let base64Encoded = call.getString("base64Encoded") else {
+            call.reject("'base64Encoded' value must be provided")
+            return
+        }
+        
+        guard let text = call.getString("text") else {
+            call.reject("'text' value must be provided")
+            return
+        }
+        
+        implementation.decrypt(text: text, base64Encoded: base64Encoded) { (result, success) in
+            if success {
+                call.resolve([
+                    "decrypted": result
+                ])
+            } else {
+                call.reject(result)
+            }
+        }
     }
     
     @objc func generateSymmetricKey(_ call: CAPPluginCall) {
