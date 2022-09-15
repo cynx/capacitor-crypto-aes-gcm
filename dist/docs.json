@@ -7,7 +7,7 @@
     "methods": [
       {
         "name": "encrypt",
-        "signature": "(options: { text: string; base64Encoded: string; encodedIV?: string; }) => Promise<{ encrypted: string; }>",
+        "signature": "(options: { text: string; base64Encoded: string; encodedIV?: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -15,7 +15,7 @@
             "type": "{ text: string; base64Encoded: string; encodedIV?: string | undefined; }"
           }
         ],
-        "returns": "Promise<{ encrypted: string; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -23,7 +23,7 @@
       },
       {
         "name": "decrypt",
-        "signature": "(options: { text: string; base64Encoded: string; encodedIV?: string; }) => Promise<{ decrypted: string; }>",
+        "signature": "(options: { text: string; base64Encoded: string; encodedIV?: string; }) => any",
         "parameters": [
           {
             "name": "options",
@@ -31,7 +31,7 @@
             "type": "{ text: string; base64Encoded: string; encodedIV?: string | undefined; }"
           }
         ],
-        "returns": "Promise<{ decrypted: string; }>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -39,9 +39,9 @@
       },
       {
         "name": "generateSymmetricKey",
-        "signature": "() => Promise<string>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<string>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -49,9 +49,9 @@
       },
       {
         "name": "generateIV",
-        "signature": "() => Promise<string>",
+        "signature": "() => any",
         "parameters": [],
-        "returns": "Promise<string>",
+        "returns": "any",
         "tags": [],
         "docs": "",
         "complexTypes": [],

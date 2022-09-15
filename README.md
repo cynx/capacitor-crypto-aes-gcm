@@ -16,6 +16,7 @@ npx cap sync
 * [`encrypt(...)`](#encrypt)
 * [`decrypt(...)`](#decrypt)
 * [`generateSymmetricKey()`](#generatesymmetrickey)
+* [`generateIV()`](#generateiv)
 
 </docgen-index>
 
@@ -25,12 +26,12 @@ npx cap sync
 ### encrypt(...)
 
 ```typescript
-encrypt(options: { text: string; base64Encoded: string; }) => any
+encrypt(options: { text: string; base64Encoded: string; encodedIV?: string; }) => any
 ```
 
-| Param         | Type                                                  |
-| ------------- | ----------------------------------------------------- |
-| **`options`** | <code>{ text: string; base64Encoded: string; }</code> |
+| Param         | Type                                                                      |
+| ------------- | ------------------------------------------------------------------------- |
+| **`options`** | <code>{ text: string; base64Encoded: string; encodedIV?: string; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -40,12 +41,12 @@ encrypt(options: { text: string; base64Encoded: string; }) => any
 ### decrypt(...)
 
 ```typescript
-decrypt(options: { text: string; base64Encoded: string; }) => any
+decrypt(options: { text: string; base64Encoded: string; encodedIV?: string; }) => any
 ```
 
-| Param         | Type                                                  |
-| ------------- | ----------------------------------------------------- |
-| **`options`** | <code>{ text: string; base64Encoded: string; }</code> |
+| Param         | Type                                                                      |
+| ------------- | ------------------------------------------------------------------------- |
+| **`options`** | <code>{ text: string; base64Encoded: string; encodedIV?: string; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -56,6 +57,17 @@ decrypt(options: { text: string; base64Encoded: string; }) => any
 
 ```typescript
 generateSymmetricKey() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### generateIV()
+
+```typescript
+generateIV() => any
 ```
 
 **Returns:** <code>any</code>

@@ -18,4 +18,9 @@ export class CryptoWeb extends WebPlugin implements CryptoPlugin {
     console.log('Not Implemented')
     return 'Not Implemented';
   }
+  
+  async generateIV(): Promise<string> {
+    console.log('Not Implemented')
+    return 'Not Implemented';
+  }
 }
