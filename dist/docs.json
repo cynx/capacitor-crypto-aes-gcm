@@ -7,15 +7,15 @@
     "methods": [
       {
         "name": "encrypt",
-        "signature": "(options: { text: string; base64Encoded: string; }) => any",
+        "signature": "(options: { text: string; base64Encoded: string; encodedIV?: string; }) => Promise<{ encrypted: string; }>",
         "parameters": [
           {
             "name": "options",
             "docs": "",
-            "type": "{ text: string; base64Encoded: string; }"
+            "type": "{ text: string; base64Encoded: string; encodedIV?: string | undefined; }"
           }
         ],
-        "returns": "any",
+        "returns": "Promise<{ encrypted: string; }>",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -23,15 +23,15 @@
       },
       {
         "name": "decrypt",
-        "signature": "(options: { text: string; base64Encoded: string; }) => any",
+        "signature": "(options: { text: string; base64Encoded: string; encodedIV?: string; }) => Promise<{ decrypted: string; }>",
         "parameters": [
           {
             "name": "options",
             "docs": "",
-            "type": "{ text: string; base64Encoded: string; }"
+            "type": "{ text: string; base64Encoded: string; encodedIV?: string | undefined; }"
           }
         ],
-        "returns": "any",
+        "returns": "Promise<{ decrypted: string; }>",
         "tags": [],
         "docs": "",
         "complexTypes": [],
@@ -39,13 +39,23 @@
       },
       {
         "name": "generateSymmetricKey",
-        "signature": "() => any",
+        "signature": "() => Promise<string>",
         "parameters": [],
-        "returns": "any",
+        "returns": "Promise<string>",
         "tags": [],
         "docs": "",
         "complexTypes": [],
         "slug": "generatesymmetrickey"
+      },
+      {
+        "name": "generateIV",
+        "signature": "() => Promise<string>",
+        "parameters": [],
+        "returns": "Promise<string>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "generateiv"
       }
     ],
     "properties": []

@@ -14,4 +14,5 @@ export declare class CryptoWeb extends WebPlugin implements CryptoPlugin {
         decrypted: string;
     }>;
     generateSymmetricKey(): Promise<string>;
+    generateIV(): Promise<string>;
 }
