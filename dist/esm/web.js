@@ -12,5 +12,9 @@ export class CryptoWeb extends WebPlugin {
         console.log('Not Implemented');
         return 'Not Implemented';
     }
+    async generateIV() {
+        console.log('Not Implemented');
+        return 'Not Implemented';
+    }
 }
 //# sourceMappingURL=web.js.map

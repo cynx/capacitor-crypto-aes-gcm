@@ -22,6 +22,10 @@ class CryptoWeb extends core.WebPlugin {
         console.log('Not Implemented');
         return 'Not Implemented';
     }
+    async generateIV() {
+        console.log('Not Implemented');
+        return 'Not Implemented';
+    }
 }
 
 var web = /*#__PURE__*/Object.freeze({
